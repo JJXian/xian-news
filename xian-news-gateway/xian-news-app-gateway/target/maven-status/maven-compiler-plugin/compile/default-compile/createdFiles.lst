@@ -1,0 +1,3 @@
+com/xian/app/gateway/filter/AuthorizeFilter.class
+com/xian/app/gateway/util/AppJwtUtil.class
+com/xian/app/gateway/AppGatewayApplication.class

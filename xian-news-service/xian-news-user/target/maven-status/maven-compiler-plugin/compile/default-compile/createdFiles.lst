@@ -1,0 +1,5 @@
+com/xian/user/controller/v1/ApUserLoginController.class
+com/xian/user/service/ApUserService.class
+com/xian/user/service/impl/ApUserServiceImpl.class
+com/xian/user/UserApplication.class
+com/xian/user/mapper/ApUserMapper.class

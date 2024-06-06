@@ -1,0 +1,16 @@
+server:
+  port: 51801
+spring:
+  application:
+    name: news-user
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.31.92:8848
+      config:
+        server-addr: 192.168.31.92:8848
+        file-extension: yaml
+
+  #忽略掉配置类 解决redis报错
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration
