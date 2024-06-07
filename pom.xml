@@ -16,6 +16,8 @@
         <module>xian-news-service</module>
         <module>xian-news-gateway</module>
         <module>xian-news-test</module>
+        <module>xian-news-basic</module>
+
     </modules>
 
     <!-- 继承Spring boot工程 -->
