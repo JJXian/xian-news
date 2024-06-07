@@ -60,7 +60,7 @@ public class AuthorizeFilter implements Ordered, GlobalFilter {
     }
 
     /**
-     * 优先级设置  值越小  优先级越高
+     * 优先级设置  过滤器值越小  优先级越高
      * @return
      */
     @Override

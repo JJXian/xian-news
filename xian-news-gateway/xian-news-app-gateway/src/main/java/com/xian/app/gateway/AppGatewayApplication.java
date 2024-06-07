@@ -6,7 +6,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 
 @SpringBootApplication
-@EnableDiscoveryClient
+@EnableDiscoveryClient //开启注册中心
 public class AppGatewayApplication {
 
     public static void main(String[] args) {

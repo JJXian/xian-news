@@ -1,6 +1,4 @@
 package com.xian.model.user.dtos;
-
-
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 

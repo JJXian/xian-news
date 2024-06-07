@@ -1,6 +1,10 @@
-com/xian/model/common/dtos/PageResponseResult.class
 com/xian/model/user/dtos/LoginDto.class
-com/xian/model/user/pojos/ApUser.class
+com/xian/model/article/dtos/ArticleHomeDto.class
 com/xian/model/common/dtos/ResponseResult.class
+com/xian/model/article/pojos/ApArticle.class
 com/xian/model/common/dtos/PageRequestDto.class
+com/xian/model/article/pojos/ApArticleConfig.class
 com/xian/model/common/enums/AppHttpCodeEnum.class
+com/xian/model/common/dtos/PageResponseResult.class
+com/xian/model/user/pojos/ApUser.class
+com/xian/model/article/pojos/ApArticleContent.class

@@ -27,15 +27,15 @@ public class Swagger2Configuration {
                 .groupName("1.0")
                 .select()
                 //这里指定Controller扫描包路径
-                .apis(RequestHandlerSelectors.basePackage("com.heima"))
+                .apis(RequestHandlerSelectors.basePackage("com.xian"))
                 .paths(PathSelectors.any())
                 .build();
         return docket;
     }
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("黑马头条API文档")
-                .description("黑马头条API文档")
+                .title("新闻宣传平台-平台管理API文档")
+                .description("新闻宣传后台api")
                 .version("1.0")
                 .build();
     }
