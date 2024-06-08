@@ -34,6 +34,10 @@
         </dependency>
         <dependency>
             <groupId>com.xian</groupId>
+            <artifactId>xian-news-utils</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.xian</groupId>
             <artifactId>xian-news-feign-api</artifactId>
         </dependency>
         <!-- Spring boot starter -->

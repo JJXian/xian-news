@@ -10,6 +10,7 @@ com/xian/utils/common/BCrypt.class
 com/xian/utils/common/SnowflakeIdWorker.class
 com/xian/utils/common/FileUtils.class
 com/xian/utils/common/Compute.class
+com/xian/utils/thread/WmThreadLocalUtil.class
 com/xian/utils/common/MD5Utils.class
 com/xian/utils/common/SimHashUtils.class
 com/xian/utils/common/UrlSignUtils.class

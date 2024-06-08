@@ -11,7 +11,8 @@ import java.util.Date;
 
 /**
  * 自媒体用户信息表
- * @author xianerr
+ * @Author: jjxian
+ * @CreateTime: 2024-06-08
  */
 @Data
 @TableName("wm_user")
