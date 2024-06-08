@@ -14,6 +14,7 @@
     <modules>
         <module>xian-news-user</module>
         <module>xian-news-article</module>
+        <module>xian-news-wemedia</module>
     </modules>
 
     <properties>

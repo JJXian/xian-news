@@ -3,8 +3,8 @@ package com.xian.article.tetet;
 public class CostPriceCalculator {
     public static void main(String[] args) {
         // 示例现价和收益率
-        double currentPrice = 71286;  // 现价
-        double rateOfReturn = 0.1372;   // 收益率，例如20%
+        double currentPrice = 0.4782;  // 现价
+        double rateOfReturn = -0.0113;   // 收益率，例如20%
 
         double costPrice = calculateCostPrice(currentPrice, rateOfReturn);
         System.out.println("成本价: " + costPrice);
