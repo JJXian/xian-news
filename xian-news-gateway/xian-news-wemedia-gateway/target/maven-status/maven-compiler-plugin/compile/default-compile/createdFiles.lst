@@ -1,0 +1,3 @@
+com/xian/wemedia/gateway/util/AppJwtUtil.class
+com/xian/wemedia/gateway/WemediaGatewayAplication.class
+com/xian/wemedia/gateway/filter/AuthorizeFilter.class

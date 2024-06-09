@@ -1,0 +1,5 @@
+com/xian/file/config/MinIOConfig.class
+META-INF/spring-configuration-metadata.json
+com/xian/file/service/impl/MinIOFileStorageService.class
+com/xian/file/config/MinIOConfigProperties.class
+com/xian/file/service/FileStorageService.class
