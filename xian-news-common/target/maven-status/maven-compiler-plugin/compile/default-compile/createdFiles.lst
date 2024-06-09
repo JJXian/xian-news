@@ -3,3 +3,4 @@ com/xian/common/exception/CustomException.class
 com/xian/common/swagger/SwaggerConfiguration.class
 com/xian/common/exception/ExceptionCatch.class
 com/xian/common/constants/ArticleConstants.class
+com/xian/common/constants/WemediaConstants.class
