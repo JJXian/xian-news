@@ -113,7 +113,6 @@ public class WmNewsServiceImpl  extends ServiceImpl<WmNewsMapper, WmNews> implem
         }
 
         //1.保存或修改文章
-
         WmNews wmNews = new WmNews();
         //属性拷贝 属性名词和类型相同才能拷贝
         BeanUtils.copyProperties(dto,wmNews);
@@ -169,7 +168,7 @@ public class WmNewsServiceImpl  extends ServiceImpl<WmNewsMapper, WmNews> implem
             if(materials.size() >= 3){
                 wmNews.setType(WemediaConstants.WM_NEWS_MANY_IMAGE);
                 images = materials.stream().limit(3).collect(Collectors.toList());
-            }else if(materials.size() >= 1 && materials.size() < 3){
+            }else if(materials.size() >= 1){
                 //单图
                 wmNews.setType(WemediaConstants.WM_NEWS_SINGLE_IMAGE);
                 images = materials.stream().limit(1).collect(Collectors.toList());
