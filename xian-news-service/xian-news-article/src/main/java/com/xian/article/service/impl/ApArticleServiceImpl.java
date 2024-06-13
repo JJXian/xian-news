@@ -85,6 +85,13 @@ public class ApArticleServiceImpl  extends ServiceImpl<ApArticleMapper, ApArticl
      */
     @Override
     public ResponseResult saveArticle(ArticleDto dto) {
+//        测试熔断降级
+//        try {
+//            Thread.sleep(3000);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
+
         //1.检查参数
         if(dto == null){
             return ResponseResult.errorResult(AppHttpCodeEnum.PARAM_INVALID);// 无效参数
@@ -118,7 +125,9 @@ public class ApArticleServiceImpl  extends ServiceImpl<ApArticleMapper, ApArticl
 
             //修改文章内容
             ApArticleContent apArticleContent = apArticleContentMapper.selectOne(Wrappers.<ApArticleContent>lambdaQuery().eq(ApArticleContent::getArticleId, dto.getId()));
+
             apArticleContent.setContent(dto.getContent());
+
             apArticleContentMapper.updateById(apArticleContent);
         }
 

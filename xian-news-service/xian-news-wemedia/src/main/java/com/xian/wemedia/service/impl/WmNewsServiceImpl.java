@@ -21,6 +21,7 @@ import com.xian.utils.thread.WmThreadLocalUtil;
 import com.xian.wemedia.mapper.WmMaterialMapper;
 import com.xian.wemedia.mapper.WmNewsMapper;
 import com.xian.wemedia.mapper.WmNewsMaterialMapper;
+import com.xian.wemedia.service.WmNewsAutoScanService;
 import com.xian.wemedia.service.WmNewsService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.StringUtils;
@@ -100,6 +101,11 @@ public class WmNewsServiceImpl  extends ServiceImpl<WmNewsMapper, WmNews> implem
     }
 
     /**
+     * 注入自动审核服务类
+     */
+    @Autowired
+    private WmNewsAutoScanService wmNewsAutoScanService;
+    /**
      * 发布修改文章或保存为草稿
      * @param dto
      * @return
@@ -141,6 +147,9 @@ public class WmNewsServiceImpl  extends ServiceImpl<WmNewsMapper, WmNews> implem
 
         //4.不是草稿，保存文章封面图片与素材的关系，如果当前布局是自动，需要匹配封面图片
         saveRelativeInfoForCover(dto,wmNews,materials);
+
+        //审核文章
+        wmNewsAutoScanService.autoScanWmNews(wmNews.getId());
 
         return ResponseResult.okResult(AppHttpCodeEnum.SUCCESS);
 
