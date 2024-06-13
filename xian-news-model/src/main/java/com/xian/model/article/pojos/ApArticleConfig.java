@@ -9,18 +9,25 @@ import lombok.Data;
 import java.io.Serializable;
 
 /**
- * <p>
- * APP已发布文章配置表
- * </p>
  *
- * @author itheima
+ * APP已发布文章配置表
+ *
+ *  @author jjxian
  */
 
 @Data
 @TableName("ap_article_config")
 public class ApArticleConfig implements Serializable {
 
-    @TableId(value = "id",type = IdType.ID_WORKER)
+    public ApArticleConfig(Long articleId){
+        this.articleId = articleId;
+        this.isComment = true;
+        this.isForward = true;
+        this.isDelete = false;
+        this.isDown = false;
+    }
+
+    @TableId(value = "id", type = IdType.ASSIGN_ID)
     private Long id;
 
     /**
@@ -60,4 +67,7 @@ public class ApArticleConfig implements Serializable {
      */
     @TableField("is_delete")
     private Boolean isDelete;
+
+
+
 }

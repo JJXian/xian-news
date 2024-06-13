@@ -90,6 +90,22 @@
             <groupId>com.aliyun</groupId>
             <artifactId>aliyun-java-sdk-green</artifactId>
         </dependency>
+
+
+        <!--        增强版-->
+        <dependency>
+            <groupId>com.aliyun</groupId>
+            <artifactId>green20220302</artifactId>
+            <version>1.1.0</version>
+        </dependency>
+        <!--        本地-->
+        <!--安装OSS SDK-->
+        <dependency>
+        <groupId>com.aliyun.oss</groupId>
+        <artifactId>aliyun-sdk-oss</artifactId>
+        <version>3.16.3</version>
+        </dependency>
+
         <!--HBase-->
         <dependency>
             <groupId>org.apache.hbase</groupId>

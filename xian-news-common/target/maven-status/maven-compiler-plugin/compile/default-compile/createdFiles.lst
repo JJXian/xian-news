@@ -1,6 +1,12 @@
+META-INF/spring-configuration-metadata.json
 com/xian/common/swagger/Swagger2Configuration.class
 com/xian/common/exception/CustomException.class
 com/xian/common/swagger/SwaggerConfiguration.class
 com/xian/common/exception/ExceptionCatch.class
-com/xian/common/constants/ArticleConstants.class
+com/xian/common/aliyun/util/UploadCredentials.class
 com/xian/common/constants/WemediaConstants.class
+com/xian/common/aliyun/util/ClientUploader.class
+com/xian/common/constants/ArticleConstants.class
+com/xian/common/aliyun/GreenImageScan.class
+com/xian/common/aliyun/GreenTextScan.class
+com/xian/common/aliyun/util/CustomLibUploader.class

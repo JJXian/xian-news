@@ -21,7 +21,8 @@ import java.util.Date;
 @TableName("ap_article")
 public class ApArticle implements Serializable {
 
-    @TableId(value = "id",type = IdType.ID_WORKER)
+//    @TableId(value = "id",type = IdType.ID_WORKER)
+    @TableId(value = "id", type = IdType.ASSIGN_ID)
     private Long id;
 
 

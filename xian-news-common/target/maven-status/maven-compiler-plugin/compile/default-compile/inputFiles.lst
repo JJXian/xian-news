@@ -1,6 +1,11 @@
+/Users/jjxian/IdeaProjects/personal_pojects/xian-news/xian-news-common/src/main/java/com/xian/common/aliyun/util/UploadCredentials.java
 /Users/jjxian/IdeaProjects/personal_pojects/xian-news/xian-news-common/src/main/java/com/xian/common/swagger/SwaggerConfiguration.java
+/Users/jjxian/IdeaProjects/personal_pojects/xian-news/xian-news-common/src/main/java/com/xian/common/aliyun/util/CustomLibUploader.java
+/Users/jjxian/IdeaProjects/personal_pojects/xian-news/xian-news-common/src/main/java/com/xian/common/aliyun/GreenImageScan.java
+/Users/jjxian/IdeaProjects/personal_pojects/xian-news/xian-news-common/src/main/java/com/xian/common/aliyun/GreenTextScan.java
 /Users/jjxian/IdeaProjects/personal_pojects/xian-news/xian-news-common/src/main/java/com/xian/common/swagger/Swagger2Configuration.java
 /Users/jjxian/IdeaProjects/personal_pojects/xian-news/xian-news-common/src/main/java/com/xian/common/constants/ArticleConstants.java
+/Users/jjxian/IdeaProjects/personal_pojects/xian-news/xian-news-common/src/main/java/com/xian/common/aliyun/util/ClientUploader.java
 /Users/jjxian/IdeaProjects/personal_pojects/xian-news/xian-news-common/src/main/java/com/xian/common/exception/CustomException.java
 /Users/jjxian/IdeaProjects/personal_pojects/xian-news/xian-news-common/src/main/java/com/xian/common/exception/ExceptionCatch.java
 /Users/jjxian/IdeaProjects/personal_pojects/xian-news/xian-news-common/src/main/java/com/xian/common/constants/WemediaConstants.java

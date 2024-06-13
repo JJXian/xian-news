@@ -69,7 +69,7 @@ public class WmNewsController {
     public ResponseResult downOrUp(@RequestBody WmNewsDto dto){
         //1.检查参数
         Integer id=dto.getId();
-        if(dto == null||id==null){
+        if(id==null){
             return ResponseResult.errorResult(501,"文章Id不可缺少");
         }
         WmNews wmNews =new WmNews();

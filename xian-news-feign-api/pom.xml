@@ -17,6 +17,11 @@
     </properties>
 
     <dependencies>
+<!--        feign远程接口依赖-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+        </dependency>
         <dependency>
             <groupId>com.xian</groupId>
             <artifactId>xian-news-model</artifactId>
