@@ -4,12 +4,15 @@
 /Users/jjxian/IdeaProjects/personal_pojects/xian-news/xian-news-model/src/main/java/com/xian/model/common/dtos/ResponseResult.java
 /Users/jjxian/IdeaProjects/personal_pojects/xian-news/xian-news-model/src/main/java/com/xian/model/user/dtos/LoginDto.java
 /Users/jjxian/IdeaProjects/personal_pojects/xian-news/xian-news-model/src/main/java/com/xian/model/article/pojos/ApArticleContent.java
+/Users/jjxian/IdeaProjects/personal_pojects/xian-news/xian-news-model/src/main/java/com/xian/model/schedule/dtos/Task.java
 /Users/jjxian/IdeaProjects/personal_pojects/xian-news/xian-news-model/src/main/java/com/xian/model/common/enums/AppHttpCodeEnum.java
 /Users/jjxian/IdeaProjects/personal_pojects/xian-news/xian-news-model/src/main/java/com/xian/model/article/pojos/ApArticle.java
 /Users/jjxian/IdeaProjects/personal_pojects/xian-news/xian-news-model/src/main/java/com/xian/model/wemedia/dtos/WmNewsDto.java
 /Users/jjxian/IdeaProjects/personal_pojects/xian-news/xian-news-model/src/main/java/com/xian/model/wemedia/pojos/WmChannel.java
 /Users/jjxian/IdeaProjects/personal_pojects/xian-news/xian-news-model/src/main/java/com/xian/model/common/dtos/PageRequestDto.java
 /Users/jjxian/IdeaProjects/personal_pojects/xian-news/xian-news-model/src/main/java/com/xian/model/wemedia/pojos/WmNewsMaterial.java
+/Users/jjxian/IdeaProjects/personal_pojects/xian-news/xian-news-model/src/main/java/com/xian/model/schedule/pojos/Taskinfo.java
+/Users/jjxian/IdeaProjects/personal_pojects/xian-news/xian-news-model/src/main/java/com/xian/model/schedule/pojos/TaskinfoLogs.java
 /Users/jjxian/IdeaProjects/personal_pojects/xian-news/xian-news-model/src/main/java/com/xian/model/wemedia/dtos/WmLoginDto.java
 /Users/jjxian/IdeaProjects/personal_pojects/xian-news/xian-news-model/src/main/java/com/xian/model/wemedia/pojos/WmUser.java
 /Users/jjxian/IdeaProjects/personal_pojects/xian-news/xian-news-model/src/main/java/com/xian/model/wemedia/pojos/WmNews.java

@@ -7,10 +7,13 @@ com/xian/model/common/enums/AppHttpCodeEnum.class
 com/xian/model/user/pojos/ApUser.class
 com/xian/model/wemedia/dtos/WmMaterialDto.class
 com/xian/model/wemedia/pojos/WmNews$Status.class
+com/xian/model/schedule/dtos/Task.class
 com/xian/model/user/dtos/LoginDto.class
 com/xian/model/common/dtos/ResponseResult.class
 com/xian/model/article/pojos/ApArticle.class
+com/xian/model/schedule/pojos/TaskinfoLogs.class
 com/xian/model/common/dtos/PageResponseResult.class
+com/xian/model/schedule/pojos/Taskinfo.class
 com/xian/model/wemedia/dtos/WmLoginDto.class
 com/xian/model/wemedia/pojos/WmUser.class
 com/xian/model/wemedia/pojos/WmNewsMaterial.class

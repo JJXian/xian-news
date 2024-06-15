@@ -16,6 +16,6 @@ spring:
         file-extension: yaml
 
 
-  #忽略掉配置类 解决redis报错
-  autoconfigure:
-    exclude: org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration
+#  #忽略掉配置类 解决redis报错
+#  autoconfigure:
+#    exclude: org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration

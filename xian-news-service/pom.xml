@@ -15,6 +15,7 @@
         <module>xian-news-user</module>
         <module>xian-news-article</module>
         <module>xian-news-wemedia</module>
+        <module>xian-news-schedule</module>
     </modules>
 
     <properties>
@@ -54,6 +55,7 @@
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
         </dependency>
+
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>

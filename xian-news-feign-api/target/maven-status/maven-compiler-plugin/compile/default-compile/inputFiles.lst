@@ -1,1 +1,3 @@
+/Users/jjxian/IdeaProjects/personal_pojects/xian-news/xian-news-feign-api/src/main/java/com/xian/apis/article/fallback/IArticleClientFallback.java
 /Users/jjxian/IdeaProjects/personal_pojects/xian-news/xian-news-feign-api/src/main/java/com/xian/apis/article/IArticleClient.java
+/Users/jjxian/IdeaProjects/personal_pojects/xian-news/xian-news-feign-api/src/main/java/com/xian/apis/schedule/IScheduleClient.java

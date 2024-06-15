@@ -1,7 +1,10 @@
-com/xian/article/ArticleApplication.class
 com/xian/article/service/ApArticleService.class
-com/xian/article/tetet/CostPriceCalculator.class
 com/xian/article/mapper/ApArticleMapper.class
 com/xian/article/service/impl/ApArticleServiceImpl.class
 com/xian/article/controller/v1/ArticleHomeController.class
 com/xian/article/mapper/ApArticleContentMapper.class
+com/xian/article/ArticleApplication.class
+com/xian/article/feign/ArticleClient.class
+com/xian/article/service/impl/ArticleFreemarkerServiceImpl.class
+com/xian/article/service/ArticleFreemarkerService.class
+com/xian/article/mapper/ApArticleConfigMapper.class
