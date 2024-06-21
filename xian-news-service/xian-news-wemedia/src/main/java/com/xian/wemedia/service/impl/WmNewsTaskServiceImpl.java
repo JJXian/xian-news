@@ -56,11 +56,11 @@ public class WmNewsTaskServiceImpl implements WmNewsTaskService {
     /**
      * 消费任务，审核文章
      */
-    @Scheduled(fixedRate = 1000)
+    @Scheduled(fixedRate = 10000)
     @Override
     public void scanNewsByTask() {
 
-        log.info("消费任务，审核文章");
+//        log.info("消费任务，审核文章");
 
         ResponseResult responseResult = scheduleClient.poll(TaskTypeEnum.NEWS_SCAN_TIME.getTaskType(), TaskTypeEnum.NEWS_SCAN_TIME.getPriority());
         if(responseResult.getCode().equals(200) && responseResult.getData() != null){

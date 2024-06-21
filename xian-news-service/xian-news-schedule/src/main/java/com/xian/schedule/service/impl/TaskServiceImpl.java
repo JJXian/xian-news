@@ -46,8 +46,6 @@ public class TaskServiceImpl implements TaskService {
             //2.添加任务到redis
             addTaskToCache(task);
         }
-
-
         return task.getTaskId();
 
     }

@@ -1,5 +1,6 @@
 /Users/jjxian/IdeaProjects/personal_pojects/xian-news/xian-news-service/xian-news-article/src/main/java/com/xian/article/feign/ArticleClient.java
 /Users/jjxian/IdeaProjects/personal_pojects/xian-news/xian-news-service/xian-news-article/src/main/java/com/xian/article/controller/v1/ArticleHomeController.java
+/Users/jjxian/IdeaProjects/personal_pojects/xian-news/xian-news-service/xian-news-article/src/main/java/com/xian/article/service/consumer/FanoutNewsConsumer.java
 /Users/jjxian/IdeaProjects/personal_pojects/xian-news/xian-news-service/xian-news-article/src/main/java/com/xian/article/service/impl/ApArticleServiceImpl.java
 /Users/jjxian/IdeaProjects/personal_pojects/xian-news/xian-news-service/xian-news-article/src/main/java/com/xian/article/service/ArticleFreemarkerService.java
 /Users/jjxian/IdeaProjects/personal_pojects/xian-news/xian-news-service/xian-news-article/src/main/java/com/xian/article/mapper/ApArticleConfigMapper.java

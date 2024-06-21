@@ -6,12 +6,19 @@ spring:
   cloud:
     nacos:
       discovery:
-        server-addr: 172.20.10.9:8848 # xian-iphone
+        server-addr: 59.110.114.212:8848
+#        server-addr: 172.20.10.9:8848 # xian-iphone
       config:
-        server-addr: 172.20.10.9:8848 # xian-iphone
+        server-addr: 59.110.114.212:8848
+#        server-addr: 172.20.10.9:8848 # xian-iphone
         file-extension: yml
+#  rabbitmq:
+#    username: admin
+#    password: admin
+#    virtual-host: /
+#    host: 59.110.114.212
+#    port: 5672
 
-
-#  #忽略掉配置类 解决redis报错
+#  #忽略掉配置类 解决redis报错 ,后面配置了redis 但是这里给忽略掉了 又报错 ，配置了redis之后就要把这里删掉
 #  autoconfigure:
 #    exclude: org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration

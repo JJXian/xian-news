@@ -26,15 +26,13 @@ import com.xian.wemedia.service.WmNewsService;
 import com.xian.wemedia.service.WmNewsTaskService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.StringUtils;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @Service
@@ -163,6 +161,64 @@ public class WmNewsServiceImpl  extends ServiceImpl<WmNewsMapper, WmNews> implem
 
         return ResponseResult.okResult(AppHttpCodeEnum.SUCCESS);
 
+    }
+
+    @Autowired
+    private RabbitTemplate rabbitTemplate;
+    // 1: 定义交换机
+    private String exchangeName = "fanout_news_exchange";
+    // 2: 路由key
+    private String routeKey = "";
+
+    /**
+     * 文章的上架和下架
+     * @param dto
+     * @return
+     */
+    @Override
+    public ResponseResult downOrUp(WmNewsDto dto) {
+        //1.检查参数
+        Integer id=dto.getId();
+        if(id==null){
+            return ResponseResult.errorResult(501,"文章Id不可缺少");
+        }
+        WmNews wmNews =new WmNews();
+//        BeanUtils.copyProperties(dto,wmNews);
+        wmNews = getById(id);
+//        System.out.println("----------"+wmNews);
+
+        if(wmNews==null){
+            return ResponseResult.errorResult(1002,"文章不存在");
+        }
+        if(wmNews.getStatus()!=9){// 状态 9为发布
+            return ResponseResult.errorResult(501,"当前文章不是发布状态，不能上下架");
+        }
+        //4.修改文章enable
+        if(dto.getEnable() != null && dto.getEnable() > -1 && dto.getEnable() < 2){
+            update(Wrappers.<WmNews>lambdaUpdate().set(WmNews::getEnable,dto.getEnable())
+                    .eq(WmNews::getId,wmNews.getId()));
+        }
+
+        //发送消息，通知article端修改文章配置
+        String mes = "testtesttesttesttesttesttset";
+        rabbitTemplate.convertAndSend(exchangeName,routeKey,mes);
+
+//        if(wmNews.getArticleId() != null){
+//            Map<String,Object> map = new HashMap<>();
+//            map.put("articleId",wmNews.getArticleId());
+//            map.put("enable",dto.getEnable());
+//            rabbitTemplate.convertAndSend(exchangeName, routeKey, map);
+//        }
+
+        return ResponseResult.okResult(AppHttpCodeEnum.SUCCESS);
+//        if(wmNews.getEnable()==0){// 0 下架  1 上架
+//            wmNews.setEnable((short) 1);
+//        }else if(wmNews.getEnable()==1){
+//            wmNews.setEnable((short) 0);
+//        }
+//        wmNewsService.updateById(wmNews);
+
+//        return null;
     }
 
     /**

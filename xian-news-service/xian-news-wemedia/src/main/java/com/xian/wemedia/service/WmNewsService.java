@@ -5,6 +5,7 @@ import com.xian.model.common.dtos.ResponseResult;
 import com.xian.model.wemedia.dtos.WmNewsDto;
 import com.xian.model.wemedia.dtos.WmNewsPageReqDto;
 import com.xian.model.wemedia.pojos.WmNews;
+import org.springframework.web.bind.annotation.RequestBody;
 
 public interface WmNewsService extends IService<WmNews> {
 
@@ -21,5 +22,7 @@ public interface WmNewsService extends IService<WmNews> {
      * @return
      */
     public ResponseResult submitNews(WmNewsDto dto);
+
+    public ResponseResult downOrUp(@RequestBody WmNewsDto dto);
 
 }
