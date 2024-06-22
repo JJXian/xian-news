@@ -1,0 +1,5 @@
+com/xian/schedule/feign/ScheduleClient.class
+com/xian/schedule/mapper/TaskinfoLogsMapper.class
+com/xian/schedule/mapper/TaskinfoMapper.class
+com/xian/schedule/ScheduleApplication.class
+com/xian/schedule/service/TaskService.class

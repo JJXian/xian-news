@@ -1,0 +1,6 @@
+/Users/jjxian/IdeaProjects/personal_pojects/xian-news/xian-news-service/xian-news-schedule/src/main/java/com/xian/schedule/ScheduleApplication.java
+/Users/jjxian/IdeaProjects/personal_pojects/xian-news/xian-news-service/xian-news-schedule/src/main/java/com/xian/schedule/feign/ScheduleClient.java
+/Users/jjxian/IdeaProjects/personal_pojects/xian-news/xian-news-service/xian-news-schedule/src/main/java/com/xian/schedule/mapper/TaskinfoLogsMapper.java
+/Users/jjxian/IdeaProjects/personal_pojects/xian-news/xian-news-service/xian-news-schedule/src/main/java/com/xian/schedule/mapper/TaskinfoMapper.java
+/Users/jjxian/IdeaProjects/personal_pojects/xian-news/xian-news-service/xian-news-schedule/src/main/java/com/xian/schedule/service/impl/TaskServiceImpl.java
+/Users/jjxian/IdeaProjects/personal_pojects/xian-news/xian-news-service/xian-news-schedule/src/main/java/com/xian/schedule/service/TaskService.java

@@ -1,0 +1,42 @@
+{
+  "groups": [
+    {
+      "name": "aliyun",
+      "type": "com.xian.common.aliyun.GreenImageScan",
+      "sourceType": "com.xian.common.aliyun.GreenImageScan"
+    },
+    {
+      "name": "aliyun",
+      "type": "com.xian.common.aliyun.GreenTextScan",
+      "sourceType": "com.xian.common.aliyun.GreenTextScan"
+    }
+  ],
+  "properties": [
+    {
+      "name": "aliyun.access-key-id",
+      "type": "java.lang.String",
+      "sourceType": "com.xian.common.aliyun.GreenImageScan"
+    },
+    {
+      "name": "aliyun.access-key-id",
+      "type": "java.lang.String",
+      "sourceType": "com.xian.common.aliyun.GreenTextScan"
+    },
+    {
+      "name": "aliyun.scenes",
+      "type": "java.lang.String",
+      "sourceType": "com.xian.common.aliyun.GreenImageScan"
+    },
+    {
+      "name": "aliyun.secret",
+      "type": "java.lang.String",
+      "sourceType": "com.xian.common.aliyun.GreenImageScan"
+    },
+    {
+      "name": "aliyun.secret",
+      "type": "java.lang.String",
+      "sourceType": "com.xian.common.aliyun.GreenTextScan"
+    }
+  ],
+  "hints": []
+}
