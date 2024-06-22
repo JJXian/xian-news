@@ -50,7 +50,6 @@
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-data-redis:2.3.9.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.data:spring-data-redis:2.3.7.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.data:spring-data-keyvalue:2.3.7.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework.data:spring-data-commons:2.3.7.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-oxm:5.2.13.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: io.lettuce:lettuce-core:5.3.6.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: io.netty:netty-common:4.1.59.Final" level="project" />
@@ -212,6 +211,12 @@
     <orderEntry type="library" name="Maven: com.zaxxer:HikariCP:3.4.5" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-jdbc:5.2.13.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: com.alibaba:fastjson:1.2.58" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-data-mongodb:2.3.9.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.mongodb:mongodb-driver-sync:4.0.5" level="project" />
+    <orderEntry type="library" name="Maven: org.mongodb:bson:4.0.5" level="project" />
+    <orderEntry type="library" name="Maven: org.mongodb:mongodb-driver-core:4.0.5" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.data:spring-data-mongodb:3.0.7.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.data:spring-data-commons:2.3.7.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.bouncycastle:bcprov-jdk15on:1.64" level="project" />
     <orderEntry type="module" module-name="xian-news-utils" />
     <orderEntry type="library" name="Maven: commons-codec:commons-codec:1.12" level="project" />

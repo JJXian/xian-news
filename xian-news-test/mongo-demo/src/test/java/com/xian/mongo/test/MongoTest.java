@@ -28,7 +28,7 @@ public class MongoTest {
     @Test
     public void saveTest(){
         ApAssociateWords apAssociateWords = new ApAssociateWords();
-        apAssociateWords.setAssociateWords("黑马头条");
+        apAssociateWords.setAssociateWords("新闻速报");
         apAssociateWords.setCreatedTime(new Date());
         mongoTemplate.save(apAssociateWords);
     }
@@ -36,14 +36,14 @@ public class MongoTest {
     //查询一个
     @Test
     public void saveFindOne(){
-        ApAssociateWords apAssociateWords = mongoTemplate.findById("5fc2fc3fb60c9a039c44556e", ApAssociateWords.class);
+        ApAssociateWords apAssociateWords = mongoTemplate.findById("66768346bd463e1e2dd7d84f", ApAssociateWords.class);
         System.out.println(apAssociateWords);
     }
 
     //条件查询
     @Test
     public void testQuery(){
-        Query query = Query.query(Criteria.where("associateWords").is("黑马头条"))
+        Query query = Query.query(Criteria.where("associateWords").is("新闻速报"))
                 .with(Sort.by(Sort.Direction.DESC,"createdTime"));
         List<ApAssociateWords> apAssociateWordsList = mongoTemplate.find(query, ApAssociateWords.class);
         System.out.println(apAssociateWordsList);
@@ -51,6 +51,6 @@ public class MongoTest {
 
     @Test
     public void testDel(){
-        mongoTemplate.remove(Query.query(Criteria.where("associateWords").is("黑马头条")),ApAssociateWords.class);
+        mongoTemplate.remove(Query.query(Criteria.where("associateWords").is("新闻速报")),ApAssociateWords.class);
     }
 }

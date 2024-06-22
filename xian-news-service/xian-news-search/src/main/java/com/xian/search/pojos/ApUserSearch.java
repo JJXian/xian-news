@@ -1,4 +1,4 @@
-package com.xian.mongo.pojo;
+package com.xian.search.pojos;
 
 import lombok.Data;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -8,23 +8,30 @@ import java.util.Date;
 
 /**
  * <p>
- * 联想词表
+ * APP用户搜索信息表
  * </p>
- *
- * @author jjxian
+ * @author itheima
  */
 @Data
-@Document("ap_associate_words")
-public class ApAssociateWords implements Serializable {
+@Document("ap_user_search")
+public class ApUserSearch implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
+    /**
+     * 主键
+     */
     private String id;
 
     /**
-     * 联想词
+     * 用户ID
      */
-    private String associateWords;
+    private Integer userId;
+
+    /**
+     * 搜索词
+     */
+    private String keyword;
 
     /**
      * 创建时间
