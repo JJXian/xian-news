@@ -7,11 +7,8 @@ import java.io.Serializable;
 import java.util.Date;
 
 /**
- * <p>
  * 联想词表
- * </p>
- *
- * @author itheima
+ * @author jjxian
  */
 @Data
 @Document("ap_associate_words")
