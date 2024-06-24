@@ -17,6 +17,7 @@
         <module>xian-news-wemedia</module>
         <module>xian-news-schedule</module>
         <module>xian-news-search</module>
+        <module>xian-news-admin</module>
     </modules>
 
     <properties>
