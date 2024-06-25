@@ -1,11 +1,11 @@
 package com.xian.wemedia.controller.v1;
 
 import com.xian.model.common.dtos.ResponseResult;
+import com.xian.model.wemedia.dtos.ChannelDto;
+import com.xian.model.wemedia.pojos.WmChannel;
 import com.xian.wemedia.service.WmChannelService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @Author: jjxian
@@ -21,5 +21,31 @@ public class WmChannelController {
     @GetMapping("/channels")
     public ResponseResult findAll(){
         return wmChannelService.findAll();
+    }
+
+
+    @PostMapping("/list")
+    public ResponseResult findByNameAndPage(@RequestBody ChannelDto dto){
+        return wmChannelService.findByNameAndPage(dto);
+    }
+
+    @PostMapping("/save")
+    public ResponseResult insert(@RequestBody WmChannel adChannel){
+        return wmChannelService.insert(adChannel);
+    }
+
+    @PostMapping("/update")
+    public ResponseResult update(@RequestBody WmChannel adChannel){
+        return wmChannelService.update(adChannel);
+    }
+
+    /**
+     * delete by id
+     * @param id
+     * @return
+     */
+    @DeleteMapping("/del/{id}")
+    public ResponseResult deleteById(@PathVariable("id") Integer id){
+        return wmChannelService.deleteById(id);
     }
 }
