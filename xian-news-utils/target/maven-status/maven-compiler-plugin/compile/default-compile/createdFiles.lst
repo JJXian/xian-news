@@ -3,12 +3,15 @@ com/xian/utils/common/SensitiveWordUtil.class
 com/xian/utils/common/ReflectUtils.class
 com/xian/utils/common/AppJwtUtil.class
 com/xian/utils/common/Base64Utils.class
+com/xian/utils/thread/AppThreadLocalUtil.class
 com/xian/utils/common/DateUtils.class
+com/xian/utils/common/ProtostuffUtil.class
 com/xian/utils/common/DESUtils.class
 com/xian/utils/common/IdsUtils.class
 com/xian/utils/common/BCrypt.class
 com/xian/utils/common/SnowflakeIdWorker.class
 com/xian/utils/common/FileUtils.class
+com/xian/utils/common/JdkSerializeUtil.class
 com/xian/utils/common/Compute.class
 com/xian/utils/thread/WmThreadLocalUtil.class
 com/xian/utils/common/MD5Utils.class

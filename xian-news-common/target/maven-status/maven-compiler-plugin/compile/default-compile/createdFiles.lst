@@ -7,6 +7,7 @@ com/xian/common/redis/CacheService$1.class
 com/xian/common/aliyun/util/UploadCredentials.class
 com/xian/common/constants/WemediaConstants.class
 com/xian/common/constants/ScheduleConstants.class
+com/xian/common/constants/UserConstants.class
 com/xian/common/redis/CacheService.class
 com/xian/common/aliyun/util/ClientUploader.class
 com/xian/common/constants/ArticleConstants.class

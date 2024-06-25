@@ -1,3 +1,4 @@
 com/xian/apis/schedule/IScheduleClient.class
 com/xian/apis/article/IArticleClient.class
+com/xian/apis/wemedia/IWemediaClient.class
 com/xian/apis/article/fallback/IArticleClientFallback.class
