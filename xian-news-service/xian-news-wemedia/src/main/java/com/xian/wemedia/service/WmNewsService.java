@@ -2,6 +2,7 @@ package com.xian.wemedia.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.xian.model.common.dtos.ResponseResult;
+import com.xian.model.wemedia.dtos.NewsAuthDto;
 import com.xian.model.wemedia.dtos.WmNewsDto;
 import com.xian.model.wemedia.dtos.WmNewsPageReqDto;
 import com.xian.model.wemedia.pojos.WmNews;
@@ -25,4 +26,9 @@ public interface WmNewsService extends IService<WmNews> {
 
     public ResponseResult downOrUp(@RequestBody WmNewsDto dto);
 
+    ResponseResult findList(NewsAuthDto dto);
+
+    ResponseResult newsDetail(Integer id);
+
+    ResponseResult updateStatus(Short status, NewsAuthDto dto);
 }

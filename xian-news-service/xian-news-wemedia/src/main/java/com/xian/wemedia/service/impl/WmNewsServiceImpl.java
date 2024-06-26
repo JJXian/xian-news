@@ -11,16 +11,19 @@ import com.xian.common.exception.CustomException;
 import com.xian.model.common.dtos.PageResponseResult;
 import com.xian.model.common.dtos.ResponseResult;
 import com.xian.model.common.enums.AppHttpCodeEnum;
+import com.xian.model.wemedia.dtos.NewsAuthDto;
 import com.xian.model.wemedia.dtos.WmNewsDto;
 import com.xian.model.wemedia.dtos.WmNewsPageReqDto;
 import com.xian.model.wemedia.pojos.WmMaterial;
 import com.xian.model.wemedia.pojos.WmNews;
 import com.xian.model.wemedia.pojos.WmNewsMaterial;
 import com.xian.model.wemedia.pojos.WmUser;
+import com.xian.model.wemedia.vo.WmNewsVo;
 import com.xian.utils.thread.WmThreadLocalUtil;
 import com.xian.wemedia.mapper.WmMaterialMapper;
 import com.xian.wemedia.mapper.WmNewsMapper;
 import com.xian.wemedia.mapper.WmNewsMaterialMapper;
+import com.xian.wemedia.mapper.WmUserMapper;
 import com.xian.wemedia.service.WmNewsAutoScanService;
 import com.xian.wemedia.service.WmNewsService;
 import com.xian.wemedia.service.WmNewsTaskService;
@@ -32,7 +35,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 @Service
@@ -219,6 +225,109 @@ public class WmNewsServiceImpl  extends ServiceImpl<WmNewsMapper, WmNews> implem
 //        wmNewsService.updateById(wmNews);
 
 //        return null;
+    }
+
+
+    @Autowired
+    private  WmNewsMapper wmNewsMapper;
+
+    /**
+     * 查询文章列表
+     * @param dto
+     * @return
+     */
+    @Override
+    public ResponseResult findList(NewsAuthDto dto) {
+
+        dto.checkParam();
+
+        //记录当前页
+        int currentPage = dto.getPage();
+
+        //2.分页查询+count查询
+        dto.setPage((dto.getPage()-1)*dto.getSize());
+        List<WmNewsVo> wmNewsVoList = wmNewsMapper.findListAndPage(dto);
+        int count = wmNewsMapper.findListCount(dto);
+
+        //3.结果返回
+        ResponseResult responseResult = new PageResponseResult(currentPage,dto.getSize(),count);
+        responseResult.setData(wmNewsVoList);
+        return responseResult;
+
+    }
+
+    @Autowired
+    private WmUserMapper wmUserMapper;
+
+    /**
+     * 查询文章详情
+     * @param id
+     * @return
+     */
+    @Override
+    public ResponseResult newsDetail(Integer id) {
+        if(id== null){
+            return ResponseResult.errorResult(AppHttpCodeEnum.PARAM_INVALID);
+        }
+
+        WmNews wmNews = getById(id);
+        if(null == wmNews){
+            return ResponseResult.errorResult(AppHttpCodeEnum.DATA_NOT_EXIST,"文章不存在");
+        }
+
+        //3.查询用户信息
+        WmUser wmUser = wmUserMapper.selectById(wmNews.getUserId());
+        //4.封装vo返回
+        WmNewsVo vo = new WmNewsVo();
+        //属性拷贝
+        BeanUtils.copyProperties(wmNews,vo);
+        if(wmUser != null){
+            vo.setAuthorName(wmUser.getName());
+        }
+
+        ResponseResult responseResult = new ResponseResult().ok(vo);
+
+        return responseResult;
+    }
+
+    /**
+     * 人工审核状态更新
+     * @param status 2  审核失败  4 审核成功
+     * @param dto
+     * @return
+     */
+    @Override
+    public ResponseResult updateStatus(Short status, NewsAuthDto dto) {
+        // 1 检查参数
+        if(dto == null || dto.getId()==null){
+            return ResponseResult.errorResult(AppHttpCodeEnum.PARAM_INVALID);
+        }
+
+        //查询文章
+        WmNews wmnews = getById(dto.getId());
+        if(wmnews  == null){
+            return ResponseResult.errorResult(AppHttpCodeEnum.DATA_NOT_EXIST,"文章不存在");
+
+        }
+        //  修改状态
+        wmnews.setStatus(status);
+        if(StringUtils.isNotBlank(dto.getMsg())){
+           wmnews.setReason(dto.getMsg());
+        }
+        updateById(wmnews);
+
+        //审核成功，则需要创建app端文章数据，并修改自媒体文章
+        if(status.equals(WemediaConstants.WM_NEWS_AUTH_PASS)){
+            //创建app端文章数据
+            ResponseResult responseResult = wmNewsAutoScanService.saveAppArticle(wmnews);
+            if(responseResult.getCode().equals(200)){
+                wmnews.setArticleId((Long) responseResult.getData());
+                wmnews.setStatus(WmNews.Status.PUBLISHED.getCode());
+                updateById(wmnews);
+            }
+        }
+        return ResponseResult.okResult(AppHttpCodeEnum.SUCCESS);
+
     }
 
     /**

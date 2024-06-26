@@ -1,7 +1,9 @@
 package com.xian.wemedia.controller.v1;
 
+import com.xian.common.constants.WemediaConstants;
 import com.xian.model.common.dtos.ResponseResult;
 import com.xian.model.common.enums.AppHttpCodeEnum;
+import com.xian.model.wemedia.dtos.NewsAuthDto;
 import com.xian.model.wemedia.dtos.WmNewsDto;
 import com.xian.model.wemedia.dtos.WmNewsPageReqDto;
 import com.xian.model.wemedia.pojos.WmNews;
@@ -13,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
  * @Author: jjxian
  * @CreateTime: 2024-06-09
  */
+
 @RestController
 @RequestMapping("/api/v1/news")
 public class WmNewsController {
@@ -30,6 +33,44 @@ public class WmNewsController {
         return  wmNewsService.submitNews(dto);
     }
 
+    /**
+     * 查询文章列表
+     * @param dto
+     * @return
+     */
+    @PostMapping("/list_vo")
+    public ResponseResult findList(@RequestBody NewsAuthDto dto){
+        return wmNewsService.findList(dto);
+    }
+
+    /**
+     * 查询文章详情
+     * @return
+     */
+    @GetMapping("/one_vo/{id}")
+    public ResponseResult newsDetail(@PathVariable("id") Integer id){
+        return wmNewsService.newsDetail(id);
+    }
+
+    /**
+     * 人工审核通过
+     * @param dto
+     * @return
+     */
+    @PostMapping("/auth_pass")
+    public ResponseResult authPass(@RequestBody NewsAuthDto dto){
+        return wmNewsService.updateStatus(WemediaConstants.WM_NEWS_AUTH_PASS,dto);
+    }
+
+    /**
+     * 人工审核失败
+     * @param dto
+     * @return
+     */
+    @PostMapping("/auth_fail")
+    public ResponseResult authFail(@RequestBody NewsAuthDto dto){
+        return wmNewsService.updateStatus(WemediaConstants.WM_NEWS_AUTH_FAIL,dto);
+    }
     /**
      * 查看文章详情
      * @param id
