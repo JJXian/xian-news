@@ -169,6 +169,27 @@ public class WmNewsServiceImpl  extends ServiceImpl<WmNewsMapper, WmNews> implem
 
     }
 
+    /**
+     * 查询文章详情
+     * @param id
+     * @return
+     */
+    @Override
+    public ResponseResult findOne(Integer id) {
+        //1.检查参数
+        if(id == null){
+            return ResponseResult.errorResult(AppHttpCodeEnum.PARAM_INVALID);
+        }
+        //2.查询文章
+        WmNews wmNews = getById(id);
+        if(wmNews == null){
+            return ResponseResult.errorResult(AppHttpCodeEnum.DATA_NOT_EXIST);
+        }
+        //3.结果返回
+        return ResponseResult.okResult(wmNews);
+    }
+
+
     @Autowired
     private RabbitTemplate rabbitTemplate;
     // 1: 定义交换机

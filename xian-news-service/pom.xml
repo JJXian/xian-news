@@ -18,6 +18,7 @@
         <module>xian-news-schedule</module>
         <module>xian-news-search</module>
         <module>xian-news-admin</module>
+        <module>xian-news-behavior</module>
     </modules>
 
     <properties>

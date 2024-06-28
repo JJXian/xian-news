@@ -1,3 +1,4 @@
+com/xian/model/wemedia/vo/WmNewsVo.class
 com/xian/model/article/dtos/ArticleHomeDto.class
 com/xian/model/common/dtos/PageRequestDto.class
 com/xian/model/wemedia/dtos/WmNewsPageReqDto.class
@@ -31,5 +32,6 @@ com/xian/model/schedule/pojos/Taskinfo.class
 com/xian/model/wemedia/pojos/WmUser.class
 com/xian/model/wemedia/pojos/WmSensitive.class
 com/xian/model/wemedia/pojos/WmNewsMaterial.class
+com/xian/model/wemedia/dtos/NewsAuthDto.class
 com/xian/model/wemedia/pojos/WmChannel.class
 com/xian/model/article/dtos/ArticleDto.class

@@ -1,0 +1,12 @@
+server:
+  port: 51805
+spring:
+  application:
+    name: news-behavior
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 59.110.114.212:8848
+      config:
+        server-addr: 59.110.114.212:8848
+        file-extension: yml

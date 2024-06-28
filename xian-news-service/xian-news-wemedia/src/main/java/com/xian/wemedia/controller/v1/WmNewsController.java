@@ -71,6 +71,7 @@ public class WmNewsController {
     public ResponseResult authFail(@RequestBody NewsAuthDto dto){
         return wmNewsService.updateStatus(WemediaConstants.WM_NEWS_AUTH_FAIL,dto);
     }
+
     /**
      * 查看文章详情
      * @param id
@@ -78,11 +79,14 @@ public class WmNewsController {
      */
     @GetMapping("/one/{id}")
     public ResponseResult collect(@PathVariable Integer id) {
-        if (id == null)
-            return ResponseResult.errorResult(AppHttpCodeEnum.DATA_NOT_EXIST);
-        WmNews wmNews = wmNewsService.getById(id);
-        return ResponseResult.okResult(AppHttpCodeEnum.SUCCESS);
+        return wmNewsService.findOne(id);
+        //        if (id == null)
+//            return ResponseResult.errorResult(AppHttpCodeEnum.DATA_NOT_EXIST);
+//        WmNews wmNews = wmNewsService.getById(id);
+//        return ResponseResult.okResult(AppHttpCodeEnum.SUCCESS);
     }
+
+
 
     @GetMapping("/del_news/{id}")
     public ResponseResult deleteNews(@PathVariable Integer id){

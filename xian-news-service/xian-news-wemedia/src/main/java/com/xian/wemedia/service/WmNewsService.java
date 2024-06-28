@@ -31,4 +31,6 @@ public interface WmNewsService extends IService<WmNews> {
     ResponseResult newsDetail(Integer id);
 
     ResponseResult updateStatus(Short status, NewsAuthDto dto);
+
+    ResponseResult findOne(Integer id);
 }
