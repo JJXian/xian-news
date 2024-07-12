@@ -7,8 +7,8 @@ spring:
     nacos:
       discovery:
 #        server-addr: 172.20.10.9:8848 # xian-iphone
-        server-addr: 59.110.114.212:8848
+        server-addr: 47.98.43.176:8848
       config:
-        server-addr: 59.110.114.212:8848
+        server-addr: 47.98.43.176:8848
 #        server-addr: 172.20.10.9:8848 # xian-iphone
         file-extension: yml
