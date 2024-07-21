@@ -26,7 +26,6 @@ public class ApUserServiceImpl extends ServiceImpl<ApUserMapper, ApUser> impleme
     /**
      * app端登录功能
      * @param dto
-     * @return
      */
     @Override
     public ResponseResult login(LoginDto dto) {
