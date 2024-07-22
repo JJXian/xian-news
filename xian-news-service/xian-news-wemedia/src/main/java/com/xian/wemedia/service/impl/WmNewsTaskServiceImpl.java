@@ -22,6 +22,7 @@ import java.util.Date;
 @Slf4j
 public class WmNewsTaskServiceImpl implements WmNewsTaskService {
 
+//    延迟任务远程接口
     @Autowired
     private IScheduleClient scheduleClient;
 
@@ -60,14 +61,18 @@ public class WmNewsTaskServiceImpl implements WmNewsTaskService {
     @Override
     public void scanNewsByTask() {
 
-//        log.info("消费任务，审核文章");
+        log.info("文章审核---消费任务执行---begin---");
 
         ResponseResult responseResult = scheduleClient.poll(TaskTypeEnum.NEWS_SCAN_TIME.getTaskType(), TaskTypeEnum.NEWS_SCAN_TIME.getPriority());
+
         if(responseResult.getCode().equals(200) && responseResult.getData() != null){
-            Task task = JSON.parseObject(JSON.toJSONString(responseResult.getData()), Task.class);
+//            Task task = JSON.parseObject(JSON.toJSONString(responseResult.getData()), Task.class);
+            String json_str = JSON.toJSONString(responseResult.getData());
+            Task task = JSON.parseObject(json_str, Task.class);
             WmNews wmNews = ProtostuffUtil.deserialize(task.getParameters(), WmNews.class);
             wmNewsAutoScanService.autoScanWmNews(wmNews.getId());
 
         }
+        log.info("文章审核---消费任务执行---end---");
     }
 }

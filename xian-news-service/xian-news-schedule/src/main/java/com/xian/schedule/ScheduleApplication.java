@@ -20,7 +20,6 @@ public class ScheduleApplication {
 
     /**
      * mybatis-plus乐观锁支持
-     * @return
      */
     @Bean
     public MybatisPlusInterceptor optimisticLockerInterceptor(){

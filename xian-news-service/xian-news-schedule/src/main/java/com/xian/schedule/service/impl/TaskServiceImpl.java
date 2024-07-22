@@ -34,7 +34,6 @@ public class TaskServiceImpl implements TaskService {
     /**
      * 添加延迟任务
      * @param task   任务对象
-     * @return
      */
     @Override
     public long addTask(Task task) {
@@ -179,6 +178,7 @@ public class TaskServiceImpl implements TaskService {
     }
 
     /**
+     * 消费任务
      * 按照类型和优先级拉取任务
      * @return
      */
@@ -209,6 +209,7 @@ public class TaskServiceImpl implements TaskService {
     @Scheduled(cron = "0 */1 * * * ?")
     public void refresh(){
 
+//        使用redis分布式锁  获取到锁才能执行
         String token = cacheService.tryLock("FUTURE_TASK_SYNC", 1000 * 30);
         if(StringUtils.isNotBlank(token)){
             log.info("未来数据定时刷新---定时任务");
@@ -225,6 +226,7 @@ public class TaskServiceImpl implements TaskService {
 
                 //同步数据
                 if(!tasks.isEmpty()){
+//                    使用pipeline的方式进行同步 速度快
                     cacheService.refreshWithPipeline(futureKey,topicKey,tasks);
                     log.info("成功的将"+futureKey+"刷新到了"+topicKey);
                 }

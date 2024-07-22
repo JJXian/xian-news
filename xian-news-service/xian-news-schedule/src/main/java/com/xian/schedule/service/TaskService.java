@@ -19,6 +19,7 @@ public interface TaskService {
     public boolean cancelTask(long taskId);
 
     /**
+     * 消费任务
      * 按照类型和优先级来拉取任务
      * @param type
      * @param priority
