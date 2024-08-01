@@ -30,7 +30,7 @@ public class WmTokenInterceptor implements HandlerInterceptor {
         String userId = request.getHeader("userId");
         Optional<String> optional = Optional.ofNullable(userId);
         if(optional.isPresent()){
-            //把用户id存入threadloacl中
+            //把用户id存入threadlocal中
             WmUser wmUser = new WmUser();
             wmUser.setId(Integer.valueOf(userId));
             WmThreadLocalUtil.setUser(wmUser);

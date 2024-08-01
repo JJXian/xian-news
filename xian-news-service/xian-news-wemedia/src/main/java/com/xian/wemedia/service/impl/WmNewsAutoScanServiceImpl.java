@@ -115,6 +115,7 @@ public class WmNewsAutoScanServiceImpl implements WmNewsAutoScanService {
         }
         dto.setCreatedTime(new Date());
 
+//        文章服务远程接口保存文章
         ResponseResult responseResult = articleClient.saveArticle(dto);
         return responseResult;
 

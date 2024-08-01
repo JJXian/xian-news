@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 /**
+ * 项目敏感词控制
  * @Author: jjxian
  * @CreateTime: 2024-06-24
  */

@@ -1,5 +1,6 @@
 package com.xian.article.service.impl;
 
+import com.alibaba.fastjson.JSON;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.xian.article.mapper.ApArticleConfigMapper;
@@ -8,11 +9,13 @@ import com.xian.article.mapper.ApArticleMapper;
 import com.xian.article.service.ApArticleService;
 import com.xian.article.service.ArticleFreemarkerService;
 import com.xian.common.constants.ArticleConstants;
+import com.xian.common.redis.CacheService;
 import com.xian.model.article.dtos.ArticleDto;
 import com.xian.model.article.dtos.ArticleHomeDto;
 import com.xian.model.article.pojos.ApArticle;
 import com.xian.model.article.pojos.ApArticleConfig;
 import com.xian.model.article.pojos.ApArticleContent;
+import com.xian.model.article.vos.HotArticleVo;
 import com.xian.model.common.dtos.ResponseResult;
 import com.xian.model.common.enums.AppHttpCodeEnum;
 import lombok.extern.slf4j.Slf4j;
@@ -140,6 +143,28 @@ public class ApArticleServiceImpl  extends ServiceImpl<ApArticleMapper, ApArticl
 
         //3.结果返回  文章的id
         return ResponseResult.okResult(apArticle.getId());
+    }
+
+    @Autowired
+    private CacheService cacheService;
+    /**
+     * 加载文章列表
+     * @param dto
+     * @param type      1 加载更多   2 加载最新
+     * @param firstPage true  是首页  flase 非首页
+     * @return
+     */
+    @Override
+    public ResponseResult load2(ArticleHomeDto dto, Short type, boolean firstPage) {
+        if(firstPage){
+            String jsonStr = cacheService.get(ArticleConstants.HOT_ARTICLE_FIRST_PAGE + dto.getTag());
+            if(StringUtils.isNotBlank(jsonStr)){
+                List<HotArticleVo> hotArticleVoList = JSON.parseArray(jsonStr, HotArticleVo.class);
+                ResponseResult responseResult = ResponseResult.okResult(hotArticleVoList);
+                return responseResult;
+            }
+        }
+        return load(type,dto);
     }
 
 }

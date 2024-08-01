@@ -12,7 +12,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @SpringBootApplication
 @EnableDiscoveryClient
 @MapperScan("com.xian.wemedia.mapper")
-@EnableFeignClients(basePackages = "com.xian.apis")
+@EnableFeignClients(basePackages = "com.xian.apis") //开启feign注解远程调用
 @EnableAsync  //开启异步调用
 @EnableScheduling
 public class WemediaApplication {
