@@ -22,6 +22,9 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Date;
 
+/**
+ * 频道管理
+ */
 @Service
 @Transactional
 @Slf4j

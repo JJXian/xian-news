@@ -19,6 +19,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.Date;
 
 /**
+ * 敏感词管理
  * @Author: jjxian
  * @CreateTime: 2024-06-24
  */
@@ -49,7 +50,7 @@ public class WmSensitiveServiceImpl extends ServiceImpl<WmSensitiveMapper, WmSen
     }
 
     /**
-     * 查询
+     * 查询敏感词
      * @param dto
      * @return
      */

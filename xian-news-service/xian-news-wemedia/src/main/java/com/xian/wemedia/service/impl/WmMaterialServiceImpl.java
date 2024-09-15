@@ -23,6 +23,9 @@ import java.io.IOException;
 import java.util.Date;
 import java.util.UUID;
 
+/**
+ * 素材管理
+ */
 @Slf4j
 @Service
 @Transactional

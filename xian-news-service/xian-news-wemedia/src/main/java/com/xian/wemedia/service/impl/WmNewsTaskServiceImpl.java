@@ -18,6 +18,9 @@ import org.springframework.stereotype.Service;
 import java.util.Date;
 
 
+/**
+ * 文章定时发布
+ */
 @Service
 @Slf4j
 public class WmNewsTaskServiceImpl implements WmNewsTaskService {
@@ -71,7 +74,6 @@ public class WmNewsTaskServiceImpl implements WmNewsTaskService {
             Task task = JSON.parseObject(json_str, Task.class);
             WmNews wmNews = ProtostuffUtil.deserialize(task.getParameters(), WmNews.class);
             wmNewsAutoScanService.autoScanWmNews(wmNews.getId());
-
         }
         log.info("文章审核---消费任务执行---end---");
     }

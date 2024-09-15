@@ -26,6 +26,9 @@ import javax.annotation.Resource;
 import java.util.*;
 import java.util.stream.Collectors;
 
+/**
+ * 文章自动审核
+ */
 @Service
 @Slf4j
 @Transactional
